@@ -65,22 +65,24 @@ def weather():
         url_3 = "https://twitter.com/marswxreport?lang=en"
         browser.visit(url_3)
 
-        time.sleep(2)
+        time.sleep(3)
 
         html = browser.html
         soup = BeautifulSoup(html, "html.parser")
 
         weather_results = soup.find_all('p', class_='TweetTextSize TweetTextSize--normal js-tweet-text tweet-text')
-        time.sleep(2)
+        time.sleep(3)
         
+        weather_tweets = []
         for weather in weather_results:
             tweet = weather.get_text()
-            weather_tweets = []
-            if "sol" in tweet:
+            if "InSight" in tweet:
                 weather_tweets.append(tweet)
                 time.sleep(1)
+            
+           
+        mars_weather = weather_tweets[0].replace('\n', ' ').replace("Insight s", "S")
         
-        mars_weather = weather_tweets[0].replace('\n', ' ').replace('InSight s', 'S')
 
         mars_information["mars_weather"] = mars_weather
 
@@ -107,18 +109,45 @@ def mars_facts():
     
     return mars_information
 
-def mars_hemispher():
+def mars_hemisphere():
     
-    url_5 = "https://space-facts.com/mars/"
-    time.sleep(1)
-    tables = pd.read_html(url_4)
-    mars_facts_df = tables[1]
-    mars_facts_df.rename(columns={0:'Description', 1:'Value'}, inplace=True)
-    mars_facts_df.set_index('Description', inplace=True)
-    df = mars_facts_df.to_html()
-
-    mars_information["html_mars_facts_df"] = df
+    try: 
+    
+        browser = init_browser()
+        url_5 = "https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars"
+        browser.visit(url_5)
+    
+        time.sleep(1)
+    
+        html = browser.html
+        soup = BeautifulSoup(html, "html.parser")
+    
+        all_images = soup.find_all("div", class_="item")
 
         
+        
+        mars_dict_list=[]
+        for image in all_images:
+
+            pic_name = image.find('h3').get_text()
+            new_link = image.find("a")["href"]
+            
+            
+            browser.visit("https://astrogeology.usgs.gov/"+new_link)
+            
+            html_6 = browser.html
+            soup_6 = BeautifulSoup(html_6, 'html.parser')
+            link_div = soup_6.find("img", class_="wide-image")
+            src_link =link_div["src"]
+            url = ("https://astrogeology.usgs.gov/" + src_link)
+            
+            
+            mars_dict_list.append({"name":pic_name, "image_url": url})
+
+            browser.visit(url_5)
     
-    return mars_information
+        mars_information["hemisphere_images"] = mars_dict_list
+        return mars_information
+    
+    finally:
+        browser.quit()

@@ -5,46 +5,60 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Hot Finds</title>
+  <title>Mars, Mars, Mars</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 
-<body>
+<body style="background-color: black">
   <div class="container">
-
-    <div class="jumbotron text-center">
+    <div class="jumbotron text-center" style="background-color: lightcoral; color: whitesmoke">
       <h1>Mission to Mars</h1>
-      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button" style="background-color: lightgreen">Scrape New Data</a></p>
     </div>
-
+   </div>
     <!-- Mars news information -->
-    <div>
-      <h3><strong>Latest Mars News</strong></h3>  
-      <h5><strong>Title:</strong> {{mars_information.news_title}}</h5>
-      <h5><strong>Summary:</strong> {{mars_information.news_p}}</h5>
+    <div class="container">
+    <div class="row" style="color:white; border: 1px solid lightcoral">
+      <h3 style="text-decoration: underline">Latest Mars News:</h3>  
+      <p><strong>Title:</strong> {{mars_information.news_title}}<p>
+      <p><strong>Summary:</strong> {{mars_information.news_p}}</p><p></p>
     </div>
     <div class="row">
-      <div class="col-md-8">
-        <img src="{{ mars_information.featured_image_url }}" alt="Featured Image">
+      <div style="color:white; border: 1px solid lightcoral">
+        <h3 style="text-decoration: underline">Featured Mars Image:</h3>
+        <img src="{{ mars_information.featured_image_url }}" width=100% height=100% alt="Featured Image">
        </div>
-       <div class="col-md-4">
-        <div class="weather">
-            <h4>Current Weather on Mars:</h4>
-            <h5>{{mars_information.mars_weather}}</h5>
-        </div>
-            <div class="weather">
-                <h4>Mars Facts:</h4>
+    </div> 
+       <div class="row" style="color:white; border: 1px solid lightcoral">
+            <div class="col-lg-6 col-md-6 col-sm-6" id="weather">
+                 <h3  style="text-decoration: underline; margin-top:5%">Current Weather on Mars:</h3>
+                 <h5>{{mars_information.mars_weather}}</h5>
+            </div>
+            <div class= "col-lg-6 col-md-6 col-sm-6" id="facts">
+                <h3 style="text-decoration: underline">Mars Facts:</h4>
                 <div>
                 {{mars_information.html_mars_facts_df|safe}}
                 </div>
             </div>
-
-      </div>
-    </div>
-
+        </div>
+        <div class="row" style="border: 1px solid lightcoral">
+            <h2 style="color: white; text-decoration: underline; text-align: center">Mars Hemispheres</h2>
+            {% for images in mars_information.hemisphere_images %}
+            <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="card-group">
+                        <div class="card bg-dark" style="width:215px">
+                          <div class="card-header" style="padding:4%; background-color: lightgrey">
     
-    
-
+                             <h4 class="card_title" style="color: black"> {{images.name}}:</h4>
+                          </div>
+                          <div class="card-body">
+                            <img class="card-img-bottom" src="{{images.image_url}}" width=225% height=225% alt="Hemisphere Image">
+                          </div> 
+                        </div>
+                </div> 
+            </div>
+            {% endfor %}
+        </div>
   </div>
 </body>
 

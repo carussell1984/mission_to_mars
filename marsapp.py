@@ -24,6 +24,7 @@ def scrape():
     mars_data = scrape_mars.featured_image()
     mars_data = scrape_mars.weather()
     mars_data = scrape_mars.mars_facts()
+    mars_data = scrape_mars.mars_hemisphere()
     mars_information.update({}, mars_data, upsert=True)
     return redirect("/", code=302)
 

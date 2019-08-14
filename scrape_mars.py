@@ -81,8 +81,9 @@ def weather():
                 time.sleep(1)
             
            
-        mars_weather = weather_tweets[0].replace('\n', ' ').replace("Insight s", "S")
-        
+        mw = weather_tweets[0].replace('\n', ' ').replace("Insight s", "S")
+
+        mars_weather = mw.split('pic', 1)[0]
 
         mars_information["mars_weather"] = mars_weather
 

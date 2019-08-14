@@ -8,8 +8,8 @@
 </div>
 
 <div>
- <h3>Step 1 - Use Jupyter Notebook to write the code to scrape Data for the following Items:</h3
-   <ul>
+  <h3>Step 1 - Use Jupyter Notebook to write the code to scrape Data for the following Items:</h3
+  <ul>
   <li>Find the latest news article and news article summary: https://mars.nasa.gov/news/?page=0&per_page=40&order=publish_date+desc%2Ccreated_at+desc&search=&category=19%2C165%2C184%2C204&blank_scope=Latest</li>
   <li>Find the featured Mars photo: https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars</li>
   <li>Retrieve the latest weather information via tweet: https://twitter.com/marswxreport?lang=en</li>
@@ -28,7 +28,7 @@
    <ul>
   <li>Jupyter notebook to performe initial scraping is called mission_to_mars.ipynb and is in this main github repo</li>
   <li>The python code that performs all the scraping is called scrape_mars.py and is located in this main github repo</li>
-  <li></li>
+  <li>The python flask app is called marsapp.py and is used to call the scrape_mars.py and store all the values into MongoDB. The file is located in this main github repo</li>
   <li></li>
   <li></li>
   </ul>

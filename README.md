@@ -17,6 +17,7 @@
   <li>Find high resolution pictures of Mar's hemisphere: https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars </li>
   </ul>
 </div>
+
 <div>
   <h3>Step 2 Use MongoDB with FLask to create an HTML page that displays all the information from the URLs above:</h3>
   <p>

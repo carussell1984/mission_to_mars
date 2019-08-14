@@ -20,7 +20,7 @@
 <div>
   <h3>Step 2 Use MongoDB with FLask to create an HTML page that displays all the information from the URLs above:</h3>
   <p>
-  The Jupyter notebook was converted into a Python script, and has a function called scrape that performs all the scraping. A route called <code>/scrape</code> was created to import scrape_mars.py script and calls the scrape function. A route called <code>/</code> was created that will query the Mongo database and pass the mars data into an HTML template to display the data. Lastly the an, HTML file was created that will take the mars data dictionary and display all the data in the appropriate HTML elements. 
+  The Jupyter notebook was converted into a Python script entitled <code>scrape_mars.py</code>, and has a function called <code>scrape</code> that performs all the scraping. A route called <code>/scrape</code> was created to import scrape_mars.py script and calls the scrape function. A route called <code>/</code> was created that will query the Mongo database and pass the mars data into an HTML template to display the data. Lastly an HTML file was created that will take the mars data dictionary and display all the data in the appropriate HTML elements. 
   </p>
  
  <div>

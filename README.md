@@ -10,7 +10,7 @@
 <div>
   <h3>Step 1 - Use Jupyter Notebook to write the code to scrape Data for the following Items:</h3
   <ul>
-  <li>Find the latest news article and news article summary: https://mars.nasa.gov/news/?page=0&per_page=40&order=publish_date+desc%2Ccreated_at+desc&search=&category=19%2C165%2C184%2C204&blank_scope=Latest</li>
+  <li>&nbsp&nbsp&nbsp&nbspFind the latest news article and news article summary: https://mars.nasa.gov/news/?page=0&per_page=40&order=publish_date+desc%2Ccreated_at+desc&search=&category=19%2C165%2C184%2C204&blank_scope=Latest</li>
   <li>Find the featured Mars photo: https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars</li>
   <li>Retrieve the latest weather information via tweet: https://twitter.com/marswxreport?lang=en</li>
   <li>Find facts on mars using Pandas: https://space-facts.com/mars/</li>

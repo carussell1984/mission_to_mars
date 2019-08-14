@@ -34,13 +34,4 @@
   </ul>
  </div>
  
- <div>
- <h3>Rendered Web page</h3>
- <p>Image 1</p>
- <img src="images of mars_facts rendered/image_1.png" alt="please see file containing pictures">
- <p>Image 2</p>
- <img src="images of mars_facts rendered/image_2.png" alt="please see file containing pictures">
- <p>Image 3</p>
- <img src="images of mars_facts rendered/image_3.png" alt="please see file containing pictures">
- </div>
   

@@ -29,7 +29,7 @@
   <li>The Jupyter notebook to perform the initial scraping is called mission_to_mars.ipynb and is in this main github repo</li>
   <li>The python code that performs all the scraping is called scrape_mars.py and is located in this main github repo</li>
   <li>The python flask app is called marsapp.py and is used to call the scrape_mars.py and store all the values into MongoDB. The file is located in this main github repo</li>
-  <li>The html file which renders the data is located in a file called templates. In line css styling applied used to the html page.</li>
-  <li>In the "images of mars_facts rendered" folder there are images of the final project after a scrape was performed.</li>
+  <li>The html file which renders the data is located in a file folder called templates. Inline css styling was applied directly to the html page.</li>
+  <li>In the "images of mars_facts rendered" file folder there are images of the final project after a scrape was performed.</li>
   </ul>
   
